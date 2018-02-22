@@ -648,8 +648,9 @@
         </vjoy-device>
     </vjoy-devices>
     <import>
-        <module name="B4LK_joystick"/>
-        <module name="B4LK_strafe"/>
+        <module name="BaLK_joystick"/>
+        <module name="BaLK_strafe"/>
+		<module name="BaLK_autopilot"/>
     </import>
     <settings/>
 </profile>
