@@ -7,45 +7,50 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''"""
 import gremlin
 import math
-import user
+import hotas
 import scmap
 
-joystick = gremlin.input_devices.JoystickDecorator(user.JOY_Name,
-                                                   user.JOY_Id,
+joystick = gremlin.input_devices.JoystickDecorator(hotas.JOY_Name,
+                                                   hotas.JOY_Id,
                                                    "Default")
 
-radians = math.radians(user.JOY_Rotation)
-cosX = math.cos(radians);
-sinX = -math.sin(radians);
-cosY = math.cos(radians);
-sinY = math.sin(radians);
+radians = math.radians(hotas.JOY_Rotation)
+cosX = math.cos(radians)
+sinX = math.sin(radians)
+cosY = math.cos(radians)
+sinY = -math.sin(radians)
 
 actualX = 0
 actualY = 0
 
-# Thank you to @WhiteMagic for these math formulas
-def maxVectorLength(angle):
-	angle = abs(angle)
-	if 0 <= angle < math.pi/4:
-		return math.sqrt(1 + math.tan(angle)**2)
-	elif math.pi/4 <= angle < 0.75*math.pi:
-		return math.sqrt(1 + (1.0/math.tan(angle)) ** 2)
-	else:
-		return math.sqrt(1 + math.tan(angle) ** 2)
+# Thank you to @WhiteMagic for figuring out the required math formulas
+def setAxes(vjoy):
+    global actualX
+    global actualY
+    def maxVectorLength(angle):
+        angle = abs(angle)
+        if 0 <= angle < math.pi/4:
+            return math.sqrt(1 + math.tan(angle)**2)
+        elif math.pi/4 <= angle < 0.75*math.pi:
+            return math.sqrt(1 + (1.0/math.tan(angle)) ** 2)
+        else:
+            return math.sqrt(1 + math.tan(angle) ** 2)
+    # Obtain angles of the current input, physical as well as virtual
+    physical_angle = math.atan2(actualY, actualX)
+    virtual_angle = radians + physical_angle
+    # Scale factor between virtual and physical vector
+    scale = maxVectorLength(virtual_angle) / maxVectorLength(physical_angle)
+    vjoy[1].axis(scmap.Yaw).value = (cosX*actualX + sinY*actualY) * scale
+    vjoy[1].axis(scmap.Pitch).value = (sinX*actualX + cosY*actualY) * scale
 
-@joystick.axis(user.JOYAXIS_Yaw)
+@joystick.axis(hotas.JOYAXIS_Yaw)
 def onJoystickAxis_X(event, vjoy):
-	global actualX
-	global actualY
-	actualX = event.value
-	gremlin.util.log(actualX)
-	vjoy[1].axis(scmap.Yaw).value = actualX*cosX + actualY*sinX
-	vjoy[1].axis(scmap.Pitch).value = -actualX*sinX + actualY*cosX
+    global actualX
+    actualX = event.value
+    setAxes(vjoy)
 
-@joystick.axis(user.JOYAXIS_Pitch)
+@joystick.axis(hotas.JOYAXIS_Pitch)
 def onJoystickAxis_Y(event, vjoy):
-	global actualX
-	global actualY
-	actualY = event.value
-	vjoy[1].axis(scmap.Pitch).value = actualY*cosY + actualX*sinY
-	vjoy[1].axis(scmap.Yaw).value = -actualY*sinY + actualX*cosY
+    global actualY
+    actualY = event.value
+    setAxes(vjoy)

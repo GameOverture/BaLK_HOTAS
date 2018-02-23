@@ -10,16 +10,24 @@
                         # STAR CITIZEN KEYBINDINGS #
                         ############################
 
-# Star Citizen is mapped to strafe on the X, Y, and Z axes (non-rotate axis)
-StrafeLeftRight = 1
-StrafeUpDown = 2
-StrafeForwardBack = 3
+# Following joystick axes, buttons, and hats should be set in the key-bindings
+# of Star Citizen. You should not need to change these values.
 
+##############################################################################
+# JOYSTICK AXES (maximum of '8' supported by vJoy)
+#
+# Name of action                       # vJoy Axis
+#-----------------------------------------------------------------------------
+StrafeLeftRight = 1                    # X-Axis
+StrafeUpDown = 2                       # Y-Axis
+StrafeForwardBack = 3                  # Z-Axis
+Pitch = 4                              # X-Axis Rot
+Yaw = 5                                # Y-Axis Rot
+Roll = 6                               # Z-Axis Rot
+ThrottleAbs = 7                        # Slider 1
 
-# Star Citizen is mapped to yaw and pitch on the X-Rot, and Y-Rot axes 
-Yaw = 4
-Pitch = 5
-
-# Star Citizen is mapped to use the following joystick buttons
-SCMAP_Autoland = 10
-SCMAP_MatchVel = 11
+##############################################################################
+# JOYSTICK BUTTONS (maximum of '50' supported by Star Citizen)
+#-----------------------------------------------------------------------------
+Autoland = 10
+MatchVel = 11
