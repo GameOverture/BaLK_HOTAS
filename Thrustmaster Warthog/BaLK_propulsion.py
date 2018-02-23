@@ -14,6 +14,9 @@ import gremlin
 THR_Name = "Throttle - HOTAS Warthog"
 THR_Id = 72287236
 
+# Set which axis on throttle, that will control the... throttle.
+THRAXIS_Throttle = 4
+
 # Set the following actions to buttons on your throttle
 THRSWITCH_FlapsDown = 23 # FLAPD (flaps down)
 THRBTN_StrafeRight = 4 # MSR (thumb hat right)
@@ -36,7 +39,7 @@ SCMAP_StrafeForwardBack = 3
 
 throttle = gremlin.input_devices.JoystickDecorator(THR_Name,
                                                    THR_Id,
-                                                   "Flight")
+                                                   "Default")
 
 isStrafeLeftRight = 0
 isStrafeUpDown = 0
