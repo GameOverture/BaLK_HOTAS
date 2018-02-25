@@ -2,7 +2,7 @@
                                  BaLK HOTAS
               (Joystick Gremlin Profile/Scripts for Star Citizen)
 
-                          2018 Jason "BaLK" Knobler
+                              2018 Jason Knobler
           (https://robertsspaceindustries.com/citizens/Game_Overture)
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''"""
 import gremlin
@@ -12,6 +12,11 @@ import scmap
 throttle = gremlin.input_devices.JoystickDecorator(hotas.THR_Name,
                                                    hotas.THR_Id,
                                                    "Default")
+                                                   
+if hotas.USING_RUDDER_PEDALS:
+    rudders = gremlin.input_devices.JoystickDecorator(hotas.RUD_Name,
+                                                      hotas.RUD_Id,
+                                                      "Default")
 
 isRolling = 0
 isStrafeLeftRight = 0
@@ -89,3 +94,9 @@ def onThrottleBtn_StrafeBackward(event, vjoy, joy):
     global isStrafeBackward
     isStrafeBackward = event.is_pressed
     setAxes(vjoy, joy)
+
+if hotas.USING_RUDDER_PEDALS:
+    @rudders.axis(hotas.RUDAXIS_Rudder)
+    def onRudderAxis_Rudders(event, vjoy, joy):
+        vjoy[1].axis(scmap.Roll).value
+

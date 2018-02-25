@@ -1,8 +1,8 @@
 """'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                                  BaLK HOTAS
+                                 BaLK HOTAS
               (Joystick Gremlin Profile/Scripts for Star Citizen)
 
-                          2018 Jason "BaLK" Knobler
+                              2018 Jason Knobler
           (https://robertsspaceindustries.com/citizens/Game_Overture)         
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''"""
 
@@ -13,6 +13,18 @@
 # The following variables are initialized to the physical axes and buttons on
 # the HOTAS. The included scripts' logic utilize these values to know what
 # inputs to "listen" for to do particular actions and maneuvers.
+
+USING_RUDDER_PEDALS = True
+
+##############################################################################
+# Rudder Pedals Information
+RUD_Name = "Mad Catz Pro Flight Combat Rudder Pedals"
+RUD_Id = 111347556
+
+# Set the following actions to the physical axes on your joystick
+RUDAXIS_LeftToe = 1
+RUDAXIS_RightToe = 2
+RUDAXIS_Rudder = 3
 
 ##############################################################################
 # Joystick Information
