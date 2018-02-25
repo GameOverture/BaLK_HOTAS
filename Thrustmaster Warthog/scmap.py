@@ -25,9 +25,16 @@ Pitch = 4                              # X-Axis Rot
 Yaw = 5                                # Y-Axis Rot
 Roll = 6                               # Z-Axis Rot
 ThrottleAbs = 7                        # Slider 1
+DynamicZoom = 8                        # Slider 2
 
 ##############################################################################
 # JOYSTICK BUTTONS (maximum of '50' supported by Star Citizen)
 #-----------------------------------------------------------------------------
+FireWeaponGroup1 = 1
+FireWeaponGroup2 = 2
+CounterMeasures = 3
+LockFireMissiles = 4
+CycleCounterMeasures = 5
+CycleWeaponAmmo = 6
 Autoland = 10
 MatchVel = 11

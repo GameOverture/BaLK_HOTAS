@@ -34,8 +34,8 @@
             <mode name="Default">
                 <axis description="[script: camera] (Hat 4)" id="1"/>
                 <axis description="" id="2"/>
-                <axis description="" id="3"/>
-                <axis description="[script: propulsion] (Slider Axis)" id="4"/>
+                <axis description="THR_R [script: propulsion] (Slider Axis)" id="3"/>
+                <axis description="THR_L" id="4"/>
                 <axis description="[script: strafe]" id="5"/>
                 <button description="" id="1"/>
                 <button description="" id="2"/>
@@ -77,6 +77,31 @@
                 <axis description="" id="1"/>
                 <axis description="" id="2"/>
                 <button description="" id="1"/>
+            </mode>
+        </device>
+        <device id="92151817" label="" name="Wireless Gamepad" type="joystick" windows_id="4">
+            <mode name="Default">
+                <axis description="" id="1"/>
+                <axis description="" id="2"/>
+                <axis description="" id="3"/>
+                <axis description="" id="4"/>
+                <button description="" id="1"/>
+                <button description="" id="2"/>
+                <button description="" id="3"/>
+                <button description="" id="4"/>
+                <button description="" id="5"/>
+                <button description="" id="6"/>
+                <button description="" id="7"/>
+                <button description="" id="8"/>
+                <button description="" id="9"/>
+                <button description="" id="10"/>
+                <button description="" id="11"/>
+                <button description="" id="12"/>
+                <button description="" id="13"/>
+                <button description="" id="14"/>
+                <button description="" id="15"/>
+                <button description="" id="16"/>
+                <hat description="" id="1"/>
             </mode>
         </device>
         <device id="111347556" label="" name="Mad Catz Pro Flight Combat Rudder Pedals" type="joystick" windows_id="5">
@@ -213,8 +238,9 @@
     </vjoy-devices>
     <import>
         <module name="BaLK_autopilot"/>
+        <module name="BaLK_gunnery"/>
         <module name="BaLK_joystick"/>
-        <module name="BaLK_strafe"/>
+        <module name="BaLK_propulsion"/>
     </import>
     <settings/>
 </profile>

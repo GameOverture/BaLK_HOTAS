@@ -39,19 +39,19 @@ def onThrottleBtn_AutopilotEngage(event, vjoy, joy):
     global matchVelCnt
     if event.is_pressed:
         thr = joy[hotas.THR_Name]
-        if not thr.button(hotas.THRSWITCH_AutopilotPath).is_pressed:
-            if thr.button(hotas.THRSWITCH_AutopilotAlt).is_pressed:
+        if not thr.button(hotas.SWITCH_AutopilotPath).is_pressed:
+            if thr.button(hotas.SWITCH_AutopilotAlt).is_pressed:
                 isMatchingVelocity = True
                 matchVelCnt = 0
-        elif thr.button(hotas.THRSWITCH_AutopilotAlt).is_pressed:
+        elif thr.button(hotas.SWITCH_AutopilotAlt).is_pressed:
             vjoy[1].button(scmap.Autoland).is_pressed = True
     else:
         vjoy[1].button(scmap.Autoland).is_pressed = False
 
-@throttle.button(hotas.THRSWITCH_AutopilotPath)
+@throttle.button(hotas.SWITCH_AutopilotPath)
 def onThrottleSwitch_AutopilotPath(event, vjoy):
     cancelAutopilot(vjoy)
 
-@throttle.button(hotas.THRSWITCH_AutopilotAlt)
+@throttle.button(hotas.SWITCH_AutopilotAlt)
 def onThrottleSwitch_AutopilotAlt(event, vjoy):
     cancelAutopilot(vjoy)

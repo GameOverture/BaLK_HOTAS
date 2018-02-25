@@ -27,28 +27,37 @@ JOY_Rotation = -39
 JOYAXIS_Yaw = 1
 JOYAXIS_Pitch = 2
 
+JOYBTN_FireWep = 1                     # TG1 (Trigger stage 1)
+JOYBTN_FocusFireZoom = 6               # TG2 (Trigger stage 2)
+JOYBTN_CycleWepGrp = 3                 # S3 (pinky button)
+JOYBTN_Missiles = 2                    # S2 (red button)
+JOYBTN_CounterMeasures = 5             # S1 (index finger button)
+
 ##############################################################################
 # Throttle Information
 THR_Name = "Throttle - HOTAS Warthog"
 THR_Id = 72287236
 
-THRAXIS_ThrottleAbs = 4
+THRAXIS_ThrottleAbs = 4                # Right throttle
 THRAXIS_StrafeThrustAmt = 5            # An unused slider is a good choice.
 
 # Set the following actions to the physical switches on the throttle. Switches
 # are buttons in the virtual sense, but the logic that uses them assumes they
 # can easily be held down indefinitely
-THRSWITCH_FlapsDown = 23               # FLAPD (flaps down)
-THRSWITCH_AutopilotPath = 27           # APALT (Autopilot switch in "PATH")
-THRSWITCH_AutopilotAlt = 28            # APALT (Autopilot switch in "ALT")
+SWITCH_CycleFire = 17                  # EFRNORM (Right Fuel Norm Switch)
+SWITCH_FlapsDown = 23                  # FLAPD (flaps down)
+SWITCH_AutopilotPath = 27              # APALT (Autopilot switch in "PATH")
+SWITCH_AutopilotAlt = 28               # APALT (Autopilot switch in "ALT")
 
 # Set the following actions to the physical buttons on the throttle
 THRBTN_StrafeRight = 4                 # MSR (thumb hat right)
 THRBTN_StrafeLeft = 6                  # MSL (thumb hat left)
-THRBTN_StrafeForward = 9               # BSF (grey two-way switch forward)
-THRBTN_StrafeBackward = 10             # BSF (grey two-way switch back)
+THRBTN_StrafeBackward = 2              # MSP (thumb hat press)
 THRBTN_AutopilotEngage = 26            # APENG (Autopilot engage)
+THRBTN_CycleWeaponAmmo = 11            # CHF (red two way forward)
+THRBTN_CycleCounterMeasure = 12        # CHB (red two way backward)
 
-THRHAT_StrafeUpDown = 1 #HAT number 1 on the throttle (up/down, respectively)
+THRHAT_StrafeUpDown = 1                # HAT 1 (up/down)
+THRHAT_Roll = 1                        # HAT 1 (left/right)
 
 
