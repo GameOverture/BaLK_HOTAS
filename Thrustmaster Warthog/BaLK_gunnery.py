@@ -51,7 +51,8 @@ def onJoystickBtn_CycleWeaponGroup(event, vjoy, joy):
         isAlphaFire = False
         curWepGrp = 2 if (curWepGrp == 1) else 1
     setWeapons(vjoy, joy)
-    
+
+# WAITING FOR DYNAMIC ZOOM SUPPORT IN GAME (CURRENTLY BROKEN IN 3.0.1)
 #@joystick.button(hotas.JOYBTN_FocusFireZoom)
 #def onJoystickBtn_FocusFireZoom
 #    if event.is_pressed:
