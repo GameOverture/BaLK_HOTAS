@@ -18,7 +18,7 @@ throttle = gremlin.input_devices.JoystickDecorator(hotas.THR_Name,
                                                    "Default")
 
 @joystick.button(hotas.SWITCH_JoystickAltMod)
-def onJoystickSwitch_AltMod(event, vjoy):
+def onJoystickSwitch_AltModScanning(event, vjoy):
     vjoy[1].button(scmap.TgtReticle).is_pressed = False
     vjoy[1].button(scmap.TgtCycleAll).is_pressed = False
     vjoy[1].button(scmap.TgtCyclePinned).is_pressed = False

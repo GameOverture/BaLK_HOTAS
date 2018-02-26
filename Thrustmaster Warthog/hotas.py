@@ -37,10 +37,11 @@ JOY_Id = 72287234
 # have a centered joystick that are mounted in this way for ergonomic reasons
 JOY_Rotation = -39
 
-# Set the following actions to the physical axes on your joystick
+# Set the following actions to the physical axes on the joystick
 JOYAXIS_Yaw = 1
 JOYAXIS_Pitch = 2
 
+# Set the following actions to the physical buttons on the joystick
 JOYBTN_FireWep = 1                     # TG1 (Trigger stage 1)
 JOYBTN_FocusFireZoom = 6               # TG2 (Trigger stage 2)
 JOYBTN_CycleWepGrp = 3                 # S3 (pinky button)
@@ -49,6 +50,11 @@ JOYBTN_CounterMeasures = 5             # S1 (index finger button)
 
 # (optional mod-lever held)
 SWITCH_JoystickAltMod = 4              # S4 (mod-lever in back)
+
+JOYBTN_ShieldFront_Top = 7             # H2U
+JOYBTN_ShieldBack_Bottom = 9           # H2D
+JOYBTN_ShieldLeft = 8                  # H2R
+JOYBTN_ShieldRight = 10                # H2L
 
 JOYBTN_TgtReticle_CycleAll = 15        # H4U 
 JOYBTN_TgtCyclePin_SetPin = 19         # H4P
