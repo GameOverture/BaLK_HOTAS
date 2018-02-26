@@ -37,7 +37,8 @@ def setAxes(vjoy, joy):
         strafeAmt = max(0.05, strafeAmt) # Clamp lower bounds to 0.25
     else:
         strafeAmt = 1.0
-    vjoy[1].axis(scmap.Roll).value = strafeAmt*isRolling
+    if not hotas.USING_RUDDER_PEDALS:
+        vjoy[1].axis(scmap.Roll).value = strafeAmt*isRolling
     vjoy[1].axis(scmap.StrafeLeftRight).value = strafeAmt*isStrafeLeftRight
     vjoy[1].axis(scmap.StrafeUpDown).value = strafeAmt*isStrafeUpDown;
     if isStrafeBackward:
@@ -96,7 +97,41 @@ def onThrottleBtn_StrafeBackward(event, vjoy, joy):
     setAxes(vjoy, joy)
 
 if hotas.USING_RUDDER_PEDALS:
-    @rudders.axis(hotas.RUDAXIS_Rudder)
-    def onRudderAxis_Rudders(event, vjoy, joy):
-        vjoy[1].axis(scmap.Roll).value
+    @rudders.axis(hotas.RUDAXISBTN_BrakeReverse)
+    def onRudderAxisBtn_BrakeReverse(event, vjoy, joy):
+        if event.value >= hotas.RUDAXISBTN_Threshold:
+            vjoy[1].button(scmap.SpaceBrake).is_pressed = True
+        else:
+            vjoy[1].button(scmap.SpaceBrake).is_pressed = False
 
+if hotas.USING_RUDDER_PEDALS:
+    @rudders.axis(hotas.RUDAXISBTN_Boost)
+    def onRudderAxisBtn_Boost(event, vjoy, joy):
+        if event.value >= hotas.RUDAXISBTN_Threshold:
+            vjoy[1].button(scmap.Boost).is_pressed = True
+        else:
+            vjoy[1].button(scmap.Boost).is_pressed = False
+
+if hotas.USING_RUDDER_PEDALS:
+    @rudders.axis(hotas.RUDAXIS_Roll)
+    def onRudderAxis_Rudders(event, vjoy):
+        vjoy[1].axis(scmap.Roll).value = event.value
+        
+@throttle.button(hotas.THRBTN_LandingGearQuantum)
+def onThrottleBtn_LandingGearQuantum(event, vjoy, joy):
+    if event.is_pressed:
+        if joy[hotas.THR_Name].button(hotas.SWITCH_FlapsDown).is_pressed:
+            vjoy[1].button(scmap.LandingGear).is_pressed = True
+        else:
+            vjoy[1].button(scmap.Quantum).is_pressed = True
+    else:
+        vjoy[1].button(scmap.LandingGear).is_pressed = False
+        vjoy[1].button(scmap.Quantum).is_pressed = False
+
+@throttle.button(hotas.THRBTN_Afterburner)
+def onThrottleBtn_Afterburner(event, vjoy):
+    vjoy[1].button(scmap.Afterburner).is_pressed = event.is_pressed
+    
+@throttle.button(hotas.THRBTN_DecoupledModeToggle)
+def onThrottleBtn_DecoupledModeToggle(event, vjoy):
+    vjoy[1].button(scmap.DecoupledMode).is_pressed = event.is_pressed

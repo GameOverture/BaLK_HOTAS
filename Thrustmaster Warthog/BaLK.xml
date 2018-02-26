@@ -74,8 +74,20 @@
         </device>
         <device id="74302123" label="" name="Logitech G13 Joystick" type="joystick" windows_id="2">
             <mode name="Default">
-                <axis description="" id="1"/>
-                <axis description="" id="2"/>
+                <axis description="" id="1">
+                    <container type="basic">
+                        <action-set>
+                            <remap axis="1" vjoy="1"/>
+                        </action-set>
+                    </container>
+                </axis>
+                <axis description="" id="2">
+                    <container type="basic">
+                        <action-set>
+                            <remap axis="3" vjoy="1"/>
+                        </action-set>
+                    </container>
+                </axis>
                 <button description="" id="1"/>
             </mode>
         </device>
@@ -238,9 +250,11 @@
     </vjoy-devices>
     <import>
         <module name="BaLK_autopilot"/>
+        <module name="BaLK_camera"/>
         <module name="BaLK_gunnery"/>
         <module name="BaLK_joystick"/>
         <module name="BaLK_propulsion"/>
+        <module name="BaLK_scanning"/>
     </import>
     <settings/>
 </profile>
