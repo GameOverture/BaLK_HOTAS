@@ -56,6 +56,11 @@ JOYBTN_ShieldBack_Bottom = 9           # H2D
 JOYBTN_ShieldLeft = 8                  # H2R
 JOYBTN_ShieldRight = 10                # H2L
 
+JOYBTN_ResetPowerDistribution = 11     # H3U
+JOYBTN_IncPower1 = 14                  # H3L
+JOYBTN_IncPower2 = 12                  # H3R
+JOYBTN_IncPower3 = 13                  # H3D
+
 JOYBTN_TgtReticle_CycleAll = 15        # H4U 
 JOYBTN_TgtCyclePin_SetPin = 19         # H4P
 JOYBTN_TgtNearestEnemy_CycleAllBck = 17# H4D
@@ -89,6 +94,14 @@ THRBTN_LandingGearQuantum = 21         # LDGH (Landing Gear button)
 THRBTN_Afterburner = 7                 # SPDF (Fat two way forward) (locks)
 THRBTN_LookBehind = 8                  # SPDB (Fat two way backward)
 THRBTN_DecoupledModeToggle = 15        # LTB (red pinky button)
+
+#THRBTN_IncreaseCoolerRate
+#THRBTN_DecreaseCoolerRate
+#THRBTN_FlightSystemsReady
+#THRBTN_OpenAllDoors
+#THRBTN_CloseAllDoors
+#THRBTN_LockAllDoors
+#THRBTN_UnlockAllDoors
 
 THRHAT_StrafeUpDown = 1                # HAT 1 (up/down)
 THRHAT_Roll = 1                        # HAT 1 (left/right)

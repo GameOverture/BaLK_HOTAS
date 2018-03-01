@@ -1,18 +1,7 @@
 Eject 
 Exit Seat 
 Self Destruct 
-Increase Cooler Rate
-Decrease Cooler Rate
-Flight / Systems Ready
-Open All Doors
-Close All Doors
-Lock All Doors
-Unlock All Doors
-Cycle Camera View ****************************************
-Cycle Camera Orbit Mode
-Zoom in ( 3rd Person View )
-Zoom out ( 3rd Person View )
-Cycle IFCS Safeties **************************************
+ **************************************
 G-Force Safety ( Toggle )
 Command Level Stability ( Toggle )
 E.S.P. ( Toggle )
@@ -22,11 +11,7 @@ Reticle Mode ( Toggle )
 Target Focus
 Scanning Mode Toggle
 Scanning Mode - Radar Pulse
-Power Preset 1 ( Increase & Decrease Others )*************
-Power Preset 2 ( Increase & Decrease Others )
-Power Preset 3 ( Increase & Decrease Others )
-Reset Power Distribution
-Increase Power
+Increase Power********************************************
 Decrease Power
 Decrease Power Min
 Increase Power Max

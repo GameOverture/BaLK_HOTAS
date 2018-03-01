@@ -91,6 +91,31 @@
                 <button description="" id="1"/>
             </mode>
         </device>
+        <device id="88868292" label="" name="Wireless Controller" type="joystick" windows_id="4">
+            <mode name="Default">
+                <axis description="" id="1"/>
+                <axis description="" id="2"/>
+                <axis description="" id="3"/>
+                <axis description="" id="4"/>
+                <axis description="" id="5"/>
+                <axis description="" id="6"/>
+                <button description="" id="1"/>
+                <button description="" id="2"/>
+                <button description="" id="3"/>
+                <button description="" id="4"/>
+                <button description="" id="5"/>
+                <button description="" id="6"/>
+                <button description="" id="7"/>
+                <button description="" id="8"/>
+                <button description="" id="9"/>
+                <button description="" id="10"/>
+                <button description="" id="11"/>
+                <button description="" id="12"/>
+                <button description="" id="13"/>
+                <button description="" id="14"/>
+                <hat description="" id="1"/>
+            </mode>
+        </device>
         <device id="92151817" label="" name="Wireless Gamepad" type="joystick" windows_id="4">
             <mode name="Default">
                 <axis description="" id="1"/>
@@ -249,12 +274,15 @@
         </vjoy-device>
     </vjoy-devices>
     <import>
-        <module name="BaLK_autopilot"/>
-        <module name="BaLK_camera"/>
-        <module name="BaLK_gunnery"/>
-        <module name="BaLK_joystick"/>
-        <module name="BaLK_propulsion"/>
-        <module name="BaLK_scanning"/>
+        <module name="sc_autopilot"/>
+        <module name="sc_camera"/>
+        <module name="sc_cockpit"/>
+        <module name="sc_gunnery"/>
+        <module name="sc_joystick"/>
+        <module name="sc_power"/>
+        <module name="sc_propulsion"/>
+        <module name="sc_scanning"/>
+        <module name="sc_shields"/>
     </import>
     <settings/>
 </profile>
