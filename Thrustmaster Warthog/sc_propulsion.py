@@ -78,6 +78,18 @@ def onThrottleHat_StrafeUpDown(event, vjoy, joy):
     isStrafeUpDown = event.value[1]
     setAxes(vjoy, joy)
 
+@throttle.button(hotas.THRBTN_StrafeUp)
+def onThrottleBtn_StrafeUp(event, vjoy, joy):
+    global isStrafeUpDown
+    isStrafeUpDown = 1 if event.is_pressed else 0
+    setAxes(vjoy, joy)
+
+@throttle.button(hotas.THRBTN_StrafeDown)
+def onThrottleBtn_StrafeDown(event, vjoy, joy):
+    global isStrafeUpDown
+    isStrafeUpDown = -1 if event.is_pressed else 0
+    setAxes(vjoy, joy)
+
 @throttle.button(hotas.THRBTN_StrafeRight)
 def onThrottleBtn_StrafeRight(event, vjoy, joy):
     global isStrafeLeftRight
@@ -98,7 +110,7 @@ def onThrottleBtn_StrafeBackward(event, vjoy, joy):
 
 if hotas.USING_RUDDER_PEDALS:
     @rudders.axis(hotas.RUDAXISBTN_BrakeReverse)
-    def onRudderAxisBtn_BrakeReverse(event, vjoy, joy):
+    def onRudderAxisBtn_BrakeReverse(event, vjoy):
         if event.value >= hotas.RUDAXISBTN_Threshold:
             vjoy[1].button(scmap.SpaceBrake).is_pressed = True
         else:
@@ -106,7 +118,7 @@ if hotas.USING_RUDDER_PEDALS:
 
 if hotas.USING_RUDDER_PEDALS:
     @rudders.axis(hotas.RUDAXISBTN_Boost)
-    def onRudderAxisBtn_Boost(event, vjoy, joy):
+    def onRudderAxisBtn_Boost(event, vjoy):
         if event.value >= hotas.RUDAXISBTN_Threshold:
             vjoy[1].button(scmap.Boost).is_pressed = True
         else:
@@ -115,7 +127,7 @@ if hotas.USING_RUDDER_PEDALS:
 if hotas.USING_RUDDER_PEDALS:
     @rudders.axis(hotas.RUDAXIS_Roll)
     def onRudderAxis_Rudders(event, vjoy):
-        vjoy[1].axis(scmap.Roll).value = event.value
+        vjoy[1].axis(scmap.Roll).value = event.value * hotas.RUDDER_PEDALS_INVERT
         
 @throttle.button(hotas.THRBTN_LandingGearQuantum)
 def onThrottleBtn_LandingGearQuantum(event, vjoy, joy):

@@ -15,6 +15,7 @@
 # inputs to "listen" for to do particular actions and maneuvers.
 
 USING_RUDDER_PEDALS = True
+RUDDER_PEDALS_INVERT = -1.0 # must be -1.0 or 1.0 (negative for invert)
 
 ##############################################################################
 # Rudder Pedals Information
@@ -46,7 +47,7 @@ JOYBTN_FireWep = 1                     # TG1 (Trigger stage 1)
 JOYBTN_FocusFireZoom = 6               # TG2 (Trigger stage 2)
 JOYBTN_CycleWepGrp = 3                 # S3 (pinky button)
 JOYBTN_Missiles = 2                    # S2 (red button)
-JOYBTN_CounterMeasures = 5             # S1 (index finger button)
+JOYBTN_CycleWeaponAmmo = 5             # S1 (index finger button)
 
 # (optional mod-lever held)
 SWITCH_JoystickAltMod = 4              # S4 (mod-lever in back)
@@ -67,6 +68,8 @@ JOYBTN_TgtNearestEnemy_CycleAllBck = 17# H4D
 JOYBTN_TgtEnemyFwd_FriendlyFwd = 16    # H4R
 JOYBTN_TgtEnemyBck_FriendlyBck = 18    # H4L
 
+JOYHAT_Zoom = 1
+
 ##############################################################################
 # Throttle Information
 THR_Name = "Throttle - HOTAS Warthog"
@@ -82,18 +85,24 @@ SWITCH_CycleFire = 17                  # EFRNORM (Right Fuel Norm Switch)
 SWITCH_FlapsDown = 23                  # FLAPD (flaps down)
 SWITCH_AutopilotPath = 27              # APALT (Autopilot switch in "PATH")
 SWITCH_AutopilotAlt = 28               # APALT (Autopilot switch in "ALT")
+SWITCH_ModeOnFoot = 13                 # PSF (Pinky switch forward)
+SWITCH_ModeVehicle = 14                # PSB (Pinky switch backward)
 
 # Set the following actions to the physical buttons on the throttle
+THRBTN_StrafeUp = 3                    # MSU (thumb hat up)
+THRBTN_StrafeDown = 5                  # MSD (thumb hat down)
 THRBTN_StrafeRight = 4                 # MSR (thumb hat right)
 THRBTN_StrafeLeft = 6                  # MSL (thumb hat left)
 THRBTN_StrafeBackward = 2              # MSP (thumb hat press)
 THRBTN_AutopilotEngage = 26            # APENG (Autopilot engage)
-THRBTN_CycleWeaponAmmo = 11            # CHF (red two way forward)
-THRBTN_CycleCounterMeasure = 12        # CHB (red two way backward)
+THRBTN_CycleCounterMeasure = 11        # CHF (red two way forward)
+THRBTN_LaunchCounterMeasures = 12      # CHB (red two way backward)
 THRBTN_LandingGearQuantum = 21         # LDGH (Landing Gear button)
 THRBTN_Afterburner = 7                 # SPDF (Fat two way forward) (locks)
 THRBTN_LookBehind = 8                  # SPDB (Fat two way backward)
 THRBTN_DecoupledModeToggle = 15        # LTB (red pinky button)
+
+THRBTN_PowerToggle = 20                # APU ON
 
 #THRBTN_IncreaseCoolerRate
 #THRBTN_DecreaseCoolerRate

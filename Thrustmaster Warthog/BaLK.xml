@@ -74,20 +74,8 @@
         </device>
         <device id="74302123" label="" name="Logitech G13 Joystick" type="joystick" windows_id="2">
             <mode name="Default">
-                <axis description="" id="1">
-                    <container type="basic">
-                        <action-set>
-                            <remap axis="1" vjoy="1"/>
-                        </action-set>
-                    </container>
-                </axis>
-                <axis description="" id="2">
-                    <container type="basic">
-                        <action-set>
-                            <remap axis="3" vjoy="1"/>
-                        </action-set>
-                    </container>
-                </axis>
+                <axis description="" id="1"/>
+                <axis description="" id="2"/>
                 <button description="" id="1"/>
             </mode>
         </device>
@@ -143,8 +131,32 @@
         </device>
         <device id="111347556" label="" name="Mad Catz Pro Flight Combat Rudder Pedals" type="joystick" windows_id="5">
             <mode name="Default">
-                <axis description="" id="1"/>
-                <axis description="" id="2"/>
+                <axis description="" id="1">
+                    <container type="basic">
+                        <action-set>
+                            <map-to-keyboard>
+                                <key extended="False" scan_code="39"/>
+                            </map-to-keyboard>
+                        </action-set>
+                        <virtual-button direction="anywhere" lower-limit="-0.8" upper-limit="1.0"/>
+                        <activation-condition rule="all">
+                            <condition comparison="pressed" device_id="72287236" device_name="Throttle - HOTAS Warthog" id="13" input="button" windows_id="4"/>
+                        </activation-condition>
+                    </container>
+                </axis>
+                <axis description="" id="2">
+                    <container type="basic">
+                        <action-set>
+                            <map-to-keyboard>
+                                <key extended="False" scan_code="40"/>
+                            </map-to-keyboard>
+                        </action-set>
+                        <virtual-button direction="anywhere" lower-limit="-0.8" upper-limit="1.0"/>
+                        <activation-condition rule="all">
+                            <condition comparison="pressed" device_id="72287236" device_name="Throttle - HOTAS Warthog" id="13" input="button" windows_id="4"/>
+                        </activation-condition>
+                    </container>
+                </axis>
                 <axis description="" id="3"/>
             </mode>
         </device>
@@ -278,6 +290,7 @@
         <module name="sc_camera"/>
         <module name="sc_cockpit"/>
         <module name="sc_gunnery"/>
+        <module name="sc_human"/>
         <module name="sc_joystick"/>
         <module name="sc_power"/>
         <module name="sc_propulsion"/>

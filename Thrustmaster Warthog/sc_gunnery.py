@@ -52,6 +52,10 @@ def onJoystickBtn_CycleWeaponGroup(event, vjoy, joy):
         curWepGrp = 2 if (curWepGrp == 1) else 1
     setWeapons(vjoy, joy)
 
+@joystick.hat(hotas.JOYHAT_Zoom)
+def onJoystickHat_Zoom(event, vjoy, joy):
+    vjoy[1].hat(1).direction = (0, event.value[1])
+
 # WAITING FOR DYNAMIC ZOOM SUPPORT IN GAME (CURRENTLY BROKEN IN 3.0.1)
 #@joystick.button(hotas.JOYBTN_FocusFireZoom)
 #def onJoystickBtn_FocusFireZoom
@@ -60,18 +64,18 @@ def onJoystickBtn_CycleWeaponGroup(event, vjoy, joy):
 @throttle.button(hotas.SWITCH_CycleFire)
 def onThrottleSwitch_AlphaFireWeaponGroups(event, vjoy, joy):
     setWeapons(vjoy, joy)
+    
+@joystick.button(hotas.JOYBTN_CycleWeaponAmmo)
+def onJoystickBtn_CycleWeaponAmmo(event, vjoy):
+    vjoy[1].button(scmap.CycleWeaponAmmo).is_pressed = event.is_pressed
 
 @joystick.button(hotas.JOYBTN_Missiles)
 def onJoystickBtn_LockOrFireMissiles(event, vjoy):
     vjoy[1].button(scmap.LockFireMissiles).is_pressed = event.is_pressed
 
-@joystick.button(hotas.JOYBTN_CounterMeasures)
-def onJoystickBtn_LaunchCounterMeasures(event, vjoy):
+@throttle.button(hotas.THRBTN_LaunchCounterMeasures)
+def onThrottleBtn_LaunchCounterMeasures(event, vjoy):
     vjoy[1].button(scmap.CounterMeasures).is_pressed = event.is_pressed
-
-@throttle.button(hotas.THRBTN_CycleWeaponAmmo)
-def onThrottleBtn_CycleWeaponAmmo(event, vjoy):
-    vjoy[1].button(scmap.CycleWeaponAmmo).is_pressed = event.is_pressed
 
 @throttle.button(hotas.THRBTN_CycleCounterMeasure)
 def onThrottleBtn_CycleCounterMeasures(event, vjoy):

@@ -73,7 +73,13 @@ CloseAllDoors = 40
 LockAllDoors = 41
 UnlockAllDoors = 42
 CycleIFCSSafeties = 43
-CameraCycleView = 44
-CameraCycleOrbitMode = 45
-CameraZoomIn = 46
-CameraZoomOut = 47
+PowerToggle = 44
+CameraCycleView = 45
+CameraCycleOrbitMode = 46
+CameraZoomIn = 47
+CameraZoomOut = 48
+
+##############################################################################
+# JOYSTICK HATS (maximum of '?' supported by Star Citizen)
+#-----------------------------------------------------------------------------
+
