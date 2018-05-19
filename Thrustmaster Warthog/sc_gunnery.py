@@ -64,7 +64,7 @@ def onJoystickHat_Zoom(event, vjoy, joy):
 @throttle.button(hotas.SWITCH_CycleFire)
 def onThrottleSwitch_AlphaFireWeaponGroups(event, vjoy, joy):
     setWeapons(vjoy, joy)
-    
+
 @joystick.button(hotas.JOYBTN_CycleWeaponAmmo)
 def onJoystickBtn_CycleWeaponAmmo(event, vjoy):
     vjoy[1].button(scmap.CycleWeaponAmmo).is_pressed = event.is_pressed

@@ -36,15 +36,15 @@ def onG13Axis_Pitch(event, vjoy):
         vjoy[1].axis(scmap.StrafeForwardBack).value = 0.0
 
 if hotas.USING_RUDDER_PEDALS:
-    @rudders.axis(hotas.RUDAXISBTN_BrakeReverse)
+    @rudders.axis(hotas.RUDAXIS_Reverse)
     def onRudderAxisBtn_LeftTowBreak(event, vjoy, joy):
-        if joy[hotas.THR_Name].button(hotas.SWITCH_ModeOnFoot).is_pressed:
+        if joy[hotas.THR_Name].button(hotas.SWITCH_Power).is_pressed:
             pass
 
 if hotas.USING_RUDDER_PEDALS:
-    @rudders.axis(hotas.RUDAXISBTN_Boost)
+    @rudders.axis(hotas.RUDAXIS_Boost)
     def onRudderAxisBtn_RightTowBreak(event, vjoy, joy):
-        if joy[hotas.THR_Name].button(hotas.SWITCH_ModeOnFoot).is_pressed:
+        if joy[hotas.THR_Name].button(hotas.SWITCH_Power).is_pressed:
             pass
 
 

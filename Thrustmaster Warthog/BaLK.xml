@@ -56,7 +56,45 @@
                 <button description="" id="17"/>
                 <button description="" id="18"/>
                 <button description="" id="19"/>
-                <button description="" id="20"/>
+                <button description="" id="20">
+                    <container type="basic">
+                        <action-set>
+                            <macro>
+                                <properties/>
+                                <actions>
+                                    <key extended="False" press="False" scan_code="67"/>
+                                    <key extended="False" press="True" scan_code="68"/>
+                                    <key extended="False" press="False" scan_code="68"/>
+                                    <key extended="False" press="True" scan_code="6"/>
+                                    <key extended="False" press="False" scan_code="6"/>
+                                </actions>
+                                <activation-condition rule="all">
+                                    <condition comparison="pressed" device_id="72287236" device_name="Throttle - HOTAS Warthog" id="20" input="button" windows_id="4"/>
+                                </activation-condition>
+                            </macro>
+                        </action-set>
+                        <activation-condition rule="all">
+                            <condition comparison="pressed" input="action"/>
+                        </activation-condition>
+                    </container>
+                    <container type="basic">
+                        <action-set>
+                            <macro>
+                                <properties/>
+                                <actions>
+                                    <key extended="False" press="True" scan_code="68"/>
+                                    <key extended="False" press="False" scan_code="68"/>
+                                    <key extended="False" press="True" scan_code="67"/>
+                                    <key extended="False" press="True" scan_code="6"/>
+                                    <key extended="False" press="False" scan_code="6"/>
+                                </actions>
+                            </macro>
+                        </action-set>
+                        <activation-condition rule="all">
+                            <condition comparison="released" input="action"/>
+                        </activation-condition>
+                    </container>
+                </button>
                 <button description="" id="21"/>
                 <button description="" id="22"/>
                 <button description="" id="23"/>
@@ -68,7 +106,15 @@
                 <button description="" id="29"/>
                 <button description="" id="30"/>
                 <button description="" id="31"/>
-                <button description="" id="32"/>
+                <button description="" id="32">
+                    <container type="basic">
+                        <action-set>
+                            <map-to-keyboard>
+                                <key extended="False" scan_code="5"/>
+                            </map-to-keyboard>
+                        </action-set>
+                    </container>
+                </button>
                 <hat description="" id="1"/>
             </mode>
         </device>
@@ -140,7 +186,7 @@
                         </action-set>
                         <virtual-button direction="anywhere" lower-limit="-0.8" upper-limit="1.0"/>
                         <activation-condition rule="all">
-                            <condition comparison="pressed" device_id="72287236" device_name="Throttle - HOTAS Warthog" id="13" input="button" windows_id="4"/>
+                            <condition comparison="released" device_id="72287236" device_name="Throttle - HOTAS Warthog" id="20" input="button" windows_id="4"/>
                         </activation-condition>
                     </container>
                 </axis>
@@ -153,7 +199,7 @@
                         </action-set>
                         <virtual-button direction="anywhere" lower-limit="-0.8" upper-limit="1.0"/>
                         <activation-condition rule="all">
-                            <condition comparison="pressed" device_id="72287236" device_name="Throttle - HOTAS Warthog" id="13" input="button" windows_id="4"/>
+                            <condition comparison="released" device_id="72287236" device_name="Throttle - HOTAS Warthog" id="20" input="button" windows_id="4"/>
                         </activation-condition>
                     </container>
                 </axis>

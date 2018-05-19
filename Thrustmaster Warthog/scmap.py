@@ -61,6 +61,9 @@ ShieldLeft = 28
 ShieldRight = 29
 ShieldTop = 30
 ShieldBottom = 31
+ZoomIn = 32
+ZoomOut = 33
+ZoomReset = 34
 PowerResetDistribution = 32
 PowerPresetInc1 = 33
 PowerPresetInc2 = 34
@@ -74,12 +77,8 @@ LockAllDoors = 41
 UnlockAllDoors = 42
 CycleIFCSSafeties = 43
 PowerToggle = 44
-CameraCycleView = 45
-CameraCycleOrbitMode = 46
-CameraZoomIn = 47
-CameraZoomOut = 48
 
 ##############################################################################
 # JOYSTICK HATS (maximum of '?' supported by Star Citizen)
 #-----------------------------------------------------------------------------
-
+ZoomHat_UpDown = 1

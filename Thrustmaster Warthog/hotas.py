@@ -23,8 +23,8 @@ RUD_Name = "Mad Catz Pro Flight Combat Rudder Pedals"
 RUD_Id = 111347556
 
 # Set the following actions to the physical axes on your rudder. 
-RUDAXISBTN_BrakeReverse = 1
-RUDAXISBTN_Boost = 2
+RUDAXIS_Reverse = 1
+RUDAXIS_Boost = 2
 RUDAXIS_Roll = 3
 
 RUDAXISBTN_Threshold = -0.5         # Less than = no press
@@ -82,27 +82,30 @@ THRAXIS_StrafeThrustAmt = 5            # An unused slider is a good choice.
 # are buttons in the virtual sense, but the logic that uses them assumes they
 # can easily be held down indefinitely
 SWITCH_CycleFire = 17                  # EFRNORM (Right Fuel Norm Switch)
+SWITCH_FlapsUp = 22                    # FLAPU (flaps up)
 SWITCH_FlapsDown = 23                  # FLAPD (flaps down)
 SWITCH_AutopilotPath = 27              # APALT (Autopilot switch in "PATH")
 SWITCH_AutopilotAlt = 28               # APALT (Autopilot switch in "ALT")
 SWITCH_ModeOnFoot = 13                 # PSF (Pinky switch forward)
 SWITCH_ModeVehicle = 14                # PSB (Pinky switch backward)
+SWITCH_Power = 20                      # APU ON
 
 # Set the following actions to the physical buttons on the throttle
 THRBTN_StrafeUp = 3                    # MSU (thumb hat up)
 THRBTN_StrafeDown = 5                  # MSD (thumb hat down)
 THRBTN_StrafeRight = 4                 # MSR (thumb hat right)
 THRBTN_StrafeLeft = 6                  # MSL (thumb hat left)
-THRBTN_StrafeBackward = 2              # MSP (thumb hat press)
+THRBTN_ResetZoom = 2                   # MSP (thumb hat press)
 THRBTN_AutopilotEngage = 26            # APENG (Autopilot engage)
 THRBTN_CycleCounterMeasure = 11        # CHF (red two way forward)
 THRBTN_LaunchCounterMeasures = 12      # CHB (red two way backward)
-THRBTN_LandingGearQuantum = 21         # LDGH (Landing Gear button)
+THRBTN_LandingGear = 21                # LDGH (Landing Gear button)
 THRBTN_Afterburner = 7                 # SPDF (Fat two way forward) (locks)
 THRBTN_LookBehind = 8                  # SPDB (Fat two way backward)
 THRBTN_DecoupledModeToggle = 15        # LTB (red pinky button)
 
-THRBTN_PowerToggle = 20                # APU ON
+#THRBTN_ShieldRaise = 31                # IGNON L
+THRBTN_FlightReadyToggle = 32                # IGNON R
 
 #THRBTN_IncreaseCoolerRate
 #THRBTN_DecreaseCoolerRate

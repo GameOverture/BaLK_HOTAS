@@ -18,6 +18,6 @@ throttle = gremlin.input_devices.JoystickDecorator(hotas.THR_Name,
 def updateCockpit(vjoy):
     vjoy[1].button(scmap.PowerToggle).is_pressed = False
 
-@throttle.button(hotas.THRBTN_PowerToggle)
+@throttle.button(hotas.SWITCH_Power)
 def onJoystickBtn_ResetPowerDistribution(event, vjoy):
     vjoy[1].button(scmap.PowerToggle).is_pressed = True
